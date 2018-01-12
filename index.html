@@ -1,19 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Generación de códigos QR</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css" />
+
+    <script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="./renderer.js"></script>
+    <script>if (window.module) module = window.module;</script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    <div class="container">      
+      <h1>Generación de códigos QR</h1>
 
-    <script>
-      // You can also require other files to run in this process
-      require('./renderer.js')
-    </script>
+      <div class="row">
+        
+          <div class="form-group">
+            <label for="texto">Introduce el texto:</label>
+            <input type="text" class="form-control" id="texto" placeholder="">
+          </div>        
+          <button id="btn_qr" class="btn btn-default">Obtener código QR</button>
+       
+      </div>
+      <div class="row">
+        <img id="qrimage" />
+      </div>
+
+      <div class="row">
+        <p id="result"></p>
+      </div>
+      
+    </div><!-- /.container -->
+
+    
   </body>
 </html>
+
+
